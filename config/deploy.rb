@@ -13,10 +13,10 @@ set :deploy_to,      "/home/#{fetch(:user)}/projects/#{fetch(:application)}"
 set :unicorn_conf,   "/etc/unicorn/#{fetch(:application)}.#{fetch(:login)}.rb"
 set :unicorn_pid,    "/var/run/unicorn/#{fetch(:user)}/" \
                      "#{fetch(:application)}.#{fetch(:login)}.pid"
-set :bundle_without, %w{development test}.join(' ')             # this is default
+set :bundle_without, %w(development test).join(' ')
 set :use_sudo,       false
 
-set :repo_url,       "git@github.com:pmaksimenko/mirakuru.git"
+set :repo_url,       'git@github.com:pmaksimenko/mirakuru.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -29,7 +29,7 @@ set :pty, true
 set :log_level, :info
 
 # Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w(config/database.yml)
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w(log tmp/cache tmp/pids vendor/bundle public/system)
